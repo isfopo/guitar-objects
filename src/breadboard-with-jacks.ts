@@ -1,4 +1,9 @@
-import { cube, cuboid, cylinder } from "@jscad/modeling/src/primitives";
+import {
+  cube,
+  cuboid,
+  cylinder,
+  roundedCuboid,
+} from "@jscad/modeling/src/primitives";
 import { subtract, union } from "@jscad/modeling/src/operations/booleans";
 import { rotate, translate } from "@jscad/modeling/src/operations/transforms";
 
@@ -36,7 +41,7 @@ const jackPorts = (
   { width, height, length, padding }: typeof breadboard
 ) => {
   return subtract(
-    cuboid({
+    roundedCuboid({
       size: [
         width + padding.x * 2,
         clearance + padding.y * 2,
@@ -65,5 +70,11 @@ const jackPorts = (
 
 // A function declaration that returns geometry
 export const main = () => {
-  return jackPorts(jacks, breadboard);
+  return union(
+    body(breadboard),
+    translate(
+      [0, breadboard.height, (jacks.clearance - breadboard.padding.x) / 2],
+      jackPorts(jacks, breadboard)
+    )
+  );
 };

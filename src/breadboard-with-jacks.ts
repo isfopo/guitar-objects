@@ -18,8 +18,7 @@ const jacks = {
   clearance: 30,
 };
 
-// A function declaration that returns geometry
-export const main = () => {
+const body = () => {
   return subtract(
     cuboid({
       size: [
@@ -33,4 +32,9 @@ export const main = () => {
       size: [breadboard.width, breadboard.height, breadboard.length],
     })
   );
+};
+
+// A function declaration that returns geometry
+export const main = () => {
+  return body();
 };

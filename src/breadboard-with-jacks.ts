@@ -53,6 +53,10 @@ const jackPorts = (
         cylinder({
           radius: clearance / 2,
           height: width + padding.x * 2 - shaft * 2,
+        }),
+        cylinder({
+          radius: diameter / 2,
+          height: width + padding.x * 2,
         })
       )
     )

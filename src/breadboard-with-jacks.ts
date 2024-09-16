@@ -9,7 +9,7 @@ import { rotate, translate } from "@jscad/modeling/src/operations/transforms";
 
 const breadboard = {
   width: 166,
-  height: 51,
+  height: 56,
   length: 10,
   padding: 5,
 };
@@ -67,7 +67,7 @@ export const main = () => {
     translate(
       [
         0,
-        breadboard.height - breadboard.padding,
+        breadboard.height / 2 + jacks.clearance / 2 + breadboard.padding,
         jacks.clearance / 2 - breadboard.padding,
       ],
       jackPorts(jacks, breadboard)

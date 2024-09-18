@@ -7,18 +7,18 @@ import { degToRad } from "@jscad/modeling/src/utils";
 const segments = 50;
 
 const diameter = {
-  shaft: 8,
-  inner: 10,
-  outer: 16,
+  shaft: 14,
+  inner: 16,
+  outer: 21,
 };
 const height = {
-  bottom: 10,
-  top: 4,
+  bottom: 5,
+  top: 3,
 };
 const splines = {
-  count: 24,
-  radius: 0.5,
-  inset: 0.5,
+  count: 36,
+  radius: 0.75,
+  inset: 2,
 };
 
 const top = () => {
